@@ -1,0 +1,70 @@
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Random Gita shlokas">
+    <meta name="author" content="tilcara">
+    <link rel="icon" href="{% static 'gitarandom/images/gitarandom_icon.ico' %}">
+
+    <title>Random Gita</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'gitarandom/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'gitarandom/css/cover.css' %}" rel="stylesheet">
+
+    <!-- My style for this template -->
+    <link href="{% static 'gitarandom/css/my_style.css' %}" rel="stylesheet">
+    {% block extrahead %}
+
+{% endblock %}
+
+  </head>
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          	<ul class="nav justify-content-center">
+	  			<li class="nav-item">
+	    		<a class="nav-link active" href="{% url 'gitarandom:home' %}">Home</a>
+	  			</li>
+	  			<li class="nav-item">
+	    		<a class="nav-link" href="#">Contact</a>
+	  			</li>
+			</ul>
+        </div>
+      </header>
+      
+      {% block content %}
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Random verse</h1>
+        <p class="lead">Just click the button to display a random Gita's verse</p>
+        <p class="lead">
+          <a href="{% url 'gitarandom:random_verse' %}" class="btn btn-lg btn-secondary">Verse</a>
+        </p>
+      </main>
+      {% endblock %}
+
+    <footer class="text-muted">
+      	<div class="container">
+        	<p>See the repo <a href="https://github.com/tilcara/gitarandom">&copyGithub</a></p>
+      	</div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+   
+    <script src="{% static 'gitarandom/js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'gitarandom/js/popper.min.js' %}"></script>
+    <script src="{% static 'gitarandom/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

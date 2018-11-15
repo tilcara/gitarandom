@@ -1,0 +1,16 @@
+{% extends 'gitarandom/base.html' %}
+
+
+{% block content %}
+
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Chapter: {{verse.chapter_number}} Verse:{{verse.verse_number}}</h1>
+        <p class="lead">{{verse.text}}</p>
+        <p class="lead">{{verse.transliteration}}</p>
+        <p class="lead">{{verse.words_meaning}}</p>
+        <p class="lead">{{verse.meaning}}</p>
+      </main>
+
+
+{% endblock %}
