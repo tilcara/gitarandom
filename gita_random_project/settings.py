@@ -25,7 +25,7 @@ SECRET_KEY = 'ash%*wmi$%-mng^e=-p_v(msbabu#m_ap$zq@mj!odu*lb8ez-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tilcara.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', 'tilcara.pythonanywhere.com']
 
 
 # Application definition

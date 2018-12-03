@@ -1,4 +1,10 @@
-.text-center{
-	background-image: url('../images/lord-krishna-background.jpg');
+.text-center {
+	background-image: url('../images/loto.jpeg');
 	background-position: center;
+}
+.contenido {
+	color: black;
+}
+.jumbotron {
+	color: black;
 }

@@ -1,5 +1,5 @@
 
-{% load static %}
+{% load staticfiles %}
 
 <!doctype html>
 <html lang="en">
@@ -21,45 +21,32 @@
 
     <!-- My style for this template -->
     <link href="{% static 'gitarandom/css/my_style.css' %}" rel="stylesheet">
-    {% block extrahead %}
-
-{% endblock %}
-
   </head>
 
   <body class="text-center">
-
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
-          	<ul class="nav justify-content-center">
-	  			<li class="nav-item">
-	    		<a class="nav-link active" href="{% url 'gitarandom:home' %}">Home</a>
-	  			</li>
-	  			<li class="nav-item">
-	    		<a class="nav-link" href="#">Contact</a>
-	  			</li>
-			</ul>
+          <ul class="nav justify-content-center">
+  	  			<li class="nav-item">
+  	    		 <a class="nav-link active" href="{% url 'gitarandom:home' %}">Home</a>
+  	  			</li>
+  	  			<li class="nav-item">
+  	    		 <a class="nav-link" href="https://github.com/tilcara">Contact</a>
+  	  			</li>
+			     </ul>
         </div>
       </header>
       
-      {% block content %}
-      <main role="main" class="inner cover">
-        <h1 class="cover-heading">Random verse</h1>
-        <p class="lead">Just click the button to display a random Gita's verse</p>
-        <p class="lead">
-          <a href="{% url 'gitarandom:random_verse' %}" class="btn btn-lg btn-secondary">Verse</a>
-        </p>
-      </main>
-      {% endblock %}
+        {% block content %}
+        {% endblock content %}
 
-    <footer class="text-muted">
-      	<div class="container">
-        	<p>See the repo <a href="https://github.com/tilcara/gitarandom">&copyGithub</a></p>
-      	</div>
-    </footer>
+        
+    
+      
 
-
+      
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
    
