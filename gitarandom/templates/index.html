@@ -48,7 +48,7 @@
 			methods: {
 				getRandomVerse: function () {
 					let verse_id = Math.floor(Math.random() * 692) + 1
-					this.$http.get(`/api/verse/${verse_id}`)
+					this.$http.get(`/api/verse/${verse_id}/`)
 						.then((response) => {
 							this.verse = response.data
 						})
