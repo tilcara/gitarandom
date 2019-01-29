@@ -6,7 +6,7 @@ from gitarandom.models import Verse
 
 
 def insert_verse(apps, schema_editor):
-    with open('gitarandom/static/gitarandom/verses.json') as data_file:    
+    with open('gitarandom/static/verses.json') as data_file:    
         data = json.load(data_file)
 
     for item in data:

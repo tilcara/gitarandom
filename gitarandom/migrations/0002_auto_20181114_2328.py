@@ -6,7 +6,7 @@ from gitarandom.models import Chapter
 
 
 def insert_chapter(apps, schema_editor):
-    with open('gitarandom/static/gitarandom/chapters.json') as data_file:    
+    with open('gitarandom/static/chapters.json') as data_file:    
         data = json.load(data_file)
 
     for item in data:

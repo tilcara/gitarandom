@@ -1,0 +1,71 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Gita Random</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="{% static 'images/gitarandom_icon.ico' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body class="text-center">
+	<nav class="navbar navbar-light bg-light">
+		<span class="navbar-brand mb-0 h1">Random verses of Sri Bhagavad Gita</span>
+	</nav>
+	<div id="verse">
+		<div class="container">
+			<div class="jumbotron" v-bind="verse">
+				<button class="btn btn-info" @click="getRandomVerse">Random verse!</button>
+				<br><br>
+				<h3 class="cover-heading" v-if="Object.keys(verse).length !== 0">
+					Chapter: ${verse.chapter_number} Verse: ${verse.verse_number}
+				</h3>
+				<p class="lead">${verse.text}</p>
+				<p class="lead">${verse.transliteration}</p>
+				<p class="lead">${verse.meaning}</p>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+	
+	<script type="text/javascript">
+		new Vue({
+			el: '#verse',
+			delimiters: ['${', '}'],
+			data: {
+				verse: {}
+			},
+			methods: {
+				getRandomVerse: function () {
+					let verse_id = Math.floor(Math.random() * 692) + 1
+					this.$http.get(`/api/verse/${verse_id}`)
+						.then((response) => {
+							this.verse = response.data
+						})
+						.catch((err) => {
+							console.log(err)
+						})
+				}
+			}
+		})
+	</script>
+	<style>
+	 body {
+		 background-image: url('../static/images/back.jpeg')
+	 }
+	 .jumbotron {
+		 margin-top: 3rem;
+	 }
+	</style>
+</body>
+</html>

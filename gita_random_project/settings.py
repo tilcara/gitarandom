@@ -25,7 +25,7 @@ SECRET_KEY = 'ash%*wmi$%-mng^e=-p_v(msbabu#m_ap$zq@mj!odu*lb8ez-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'tilcara.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gitarandom',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
